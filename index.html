@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+  <script src="js/jquery.flot.min.js" type="text/javascript"></script>
+  <script src="js/jquery.flot.valuelabels.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  var tsna = {
+    options: {
+      legend: {
+        position: 'nw'
+      }
+      ,bars: { show: true, barWidth: 0.9 }
+      ,valueLabels: { show: true }
+      ,xaxis: { show: false }
+      //,yaxis: { show: true, ticks: [[0, 'None'],['1000','A few'],['2500','More than a few'],['5000', 'A lot'],['10000', 'A holy fuckton!']]}
+    }
+  }
+  var data = {
+    ecig: {
+      data: [[0,8]]
+      ,label: 'Electronic Cigarettes (8 TSNAs)'
+      ,color: 'green'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,gum: {
+      data: [[1,2]]
+      ,label: 'Nicotine Gum (2 TSNAs)'
+      ,color: '#FFFF88'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,patch: {
+      data: [[2,8]]
+      ,label: 'Nicotine Patch (8 TSNAs)'
+      ,color: ''
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,snus: {
+      data: [[3,2400]]
+      ,label: 'Swedish Snus (2,400 TSNAs)'
+      ,color: '#4096EE'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,winston: {
+      data: [[4,3365]]
+      ,label: 'Winston US (3,365 TSNAs)'
+      ,color: '#C79810'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,newport: {
+      data: [[5,3885]]
+      ,label: 'Newport US (3,885 TSNAs)'
+      ,color: '#6BBA70'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,marlnz: {
+      data: [[6,6600]]
+      ,label: 'Marlboro NZ (6,600 TSNAs)'
+      ,color: '#FF1A00'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,camel: {
+      data: [[7,7450]]
+      ,label: 'Camel (7,450 TSNAs)'
+      ,color: ''
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,skoal: {
+      data: [[8,9290]]
+      ,label: 'Skoal (9,290 TSNAs)'
+      ,color: '#FF7400'
+      ,show: true
+      ,bars: { show: true }
+    }
+    ,marlus: {
+      data: [[9,11190]]
+      ,label: 'Marlboro US (11,190 TSNAs)'
+      ,color: '#CC0000'
+      ,show: true
+      ,bars: { show: true }
+    }
+  }
+  var plot = [data.ecig,data.gum,data.patch,data.snus,data.winston,data.newport,data.marlnz,data.camel,data.skoal,data.marlus];
+  $(function(){
+    $.plot($('.tsna-graph'), plot, tsna.options);
+  });
+
+  </script>
+  <style>
+  .tsna-graph {
+    width: 600px;
+    height: 600px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Tobacco Specific Nitrosamines (TSNA) Graph</h1>
+  <div class="tsna-graph"></div>
+  <div class="legend">
+    <ul>
+      <li>
+  </div>
+</body>
+</html>
